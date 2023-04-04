@@ -117,9 +117,9 @@ if __name__ == '__main__':
 	while not rospy.is_shutdown():
 		# check if matrices are not empty then run model_fitting
 		if len(a_matrix) > 0 and len(b_matrix) > 0:
-			uf_sParams = model_fitting(a_matrix, b_matrix)
+			ufil_sParams = model_fitting(a_matrix, b_matrix)
 			if valid_params:
-				fil_sParams = filter(uf_sParams)
+				fil_sParams = filter(ufil_sParams)
 				# publish sphere params
 				sp_pub.publish(fil_sParams)
 		rate.sleep()
